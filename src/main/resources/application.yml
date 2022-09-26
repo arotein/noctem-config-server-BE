@@ -1,0 +1,26 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/arotein/noctem-config-yml-BE.git
+          username: ${GIT_ID}
+          password: ${GIT_PW}
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+      destination: config-topic #카프카 토픽
+  kafka:
+    bootstrap-servers: http://kafka:9092 # 카프카 클러스터 주소
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, refresh, httptrace, busrefresh
