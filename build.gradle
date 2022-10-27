@@ -13,7 +13,7 @@ jib {
 		}
 	}
 	to {
-		image = "arotein/noctem-config"
+		image = System.getenv("DOCKERHUB_IMG_CONFIG")
 		tags = [System.getenv("IMG_TAG")]
 		auth {
 			username = System.getenv("DOCKERHUB_ID")
