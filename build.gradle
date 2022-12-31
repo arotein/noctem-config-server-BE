@@ -21,13 +21,6 @@ jib {
 			password = System.getenv("DOCKERHUB_PW")
 		}
 	}
-	container {
-		volumes = ["/tmp"]
-		environment = [
-				"GIT_ID": System.getenv("GIT_ID"),
-				"GIT_PW": System.getenv("GIT_PW")
-		]
-	}
 }
 
 group = 'noctem'
